@@ -1,0 +1,33 @@
+@import "src/_variables.scss";
+
+header {
+    margin-left: 10px;
+    margin-bottom: -4em;
+    color: $primary;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    text-align: center;
+  }
+
+  .mat-header-cell {
+    background-color: $primary;
+  }
+
+mat-table {
+  width: 100%;
+  border-radius: 1em;
+}
+
+mat-form-field {
+  border: 1px solid $accent;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}

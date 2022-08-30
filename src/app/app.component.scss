@@ -1,0 +1,61 @@
+@import "src/_variables.scss";
+
+.active .mat-icon {
+    color: $accent;
+}
+.mat-toolbar { 
+    height: 75px;
+    padding: 8px;
+    padding-left: 0px;
+    position: relative;
+    z-index: 2;
+}
+
+.mat-toolbar .mat-button {
+    font-family: Montserrat;
+    font-size: 20px;
+}
+
+.menu-spacer {
+    flex: 1 1 auto;
+  }
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+mat-sidenav, mat-sidenav-content {
+    padding: 16px;    
+}
+
+mat-sidenav {
+    background-color: whitesmoke;
+    width: 250px;
+}
+mat-sidenav-content {
+    background-color: white;
+    
+}
+mat-sidenav .mat-button {
+    font-family: Montserrat;
+    font-size: 22px;
+    padding: 15px;
+    margin-bottom: 5px;
+    color: $primary;
+}
+
+
+.mat-menu-item {
+    font-size: 20px !important;
+    color: $primary;
+}
+
+.mat-menu-item .mat-icon {
+    color: $primary;
+}
+
+.mat-dialog-actions .mat-button {
+    font-family: Montserrat;
+    margin-right: 8px;
+    color: $primary;
+}
