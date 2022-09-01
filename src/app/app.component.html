@@ -1,7 +1,7 @@
 <mat-toolbar class="mat-elevation-z4">
   <mat-toolbar-row>
     <button mat-icon-button><mat-icon (click)="sidenav.toggle();">menu</mat-icon></button>
-    <img style="width: 200px; " src="assets/img/aturtokologo.png" alt="AturToko" >
+    <img src="assets/img/aturtokologo.png" alt="AturToko" class="imglogo" >
     <span class="menu-spacer"></span>
       <button mat-button color="primary" [matMenuTriggerFor]="user">User</button>
       <mat-menu #user="matMenu" >
@@ -38,6 +38,7 @@
     
   </mat-sidenav>
   <mat-sidenav-content>
+    <img src="assets/img/logobawah.png" alt="AturToko" class="backgroundimg" >
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

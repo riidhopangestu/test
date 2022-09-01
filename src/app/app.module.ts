@@ -13,11 +13,11 @@ import { ProductComponent } from './product/product.component';
 import { CustomerComponent } from './customer/customer.component';
 import { DocumentComponent } from './document/document.component';
 import { ManualsyncComponent } from './manualsync/manualsync.component';
-import { SettingComponent } from './setting/setting.component';
 import { SystemposComponent } from './systempos/systempos.component';
 import { SettingUserComponent } from './setting-user/setting-user.component';
 import { SettingMarketplaceComponent } from './setting-marketplace/setting-marketplace.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,6 @@ import { DialogComponent } from './dialog/dialog.component';
     CustomerComponent,
     DocumentComponent,
     ManualsyncComponent,
-    SettingComponent,
     SystemposComponent,
     SettingUserComponent,
     SettingMarketplaceComponent,
@@ -41,6 +40,7 @@ import { DialogComponent } from './dialog/dialog.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MaterialModule
   ],
   providers: [],

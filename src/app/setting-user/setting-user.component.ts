@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-setting-user',
   templateUrl: './setting-user.component.html',
-  styleUrls: ['./setting-user.component.scss']
+  styleUrls: ['../app.component.scss']
 })
 export class SettingUserComponent implements OnInit {
 
