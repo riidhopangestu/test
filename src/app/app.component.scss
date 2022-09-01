@@ -4,10 +4,12 @@
     color: $accent;
 }
 .mat-toolbar { 
+    background-color: #f8f9fa;
     height: 75px;
     padding: 8px;
     padding-left: 0px;
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 2;
 }
 
@@ -20,6 +22,22 @@
     flex: 1 1 auto;
   }
 
+mat-sidenav {
+    background-color: whitesmoke;
+    width: 230px;
+    overflow: hidden;
+}
+mat-sidenav-content {
+    background-color: white;
+}
+mat-sidenav .mat-button {
+    font-family: Montserrat;
+    font-size: 19px;
+    padding: 10px;
+    margin-bottom: 5px;
+    color: $primary;
+}
+
 mat-sidenav-container {
     height: 100%;
 }
@@ -28,21 +46,14 @@ mat-sidenav, mat-sidenav-content {
     padding: 16px;    
 }
 
-mat-sidenav {
-    background-color: whitesmoke;
-    width: 250px;
-}
-mat-sidenav-content {
-    background-color: white;
-    
-}
-mat-sidenav .mat-button {
-    font-family: Montserrat;
-    font-size: 22px;
-    padding: 15px;
-    margin-bottom: 5px;
-    color: $primary;
-}
+.backgroundimg {
+    position: fixed;
+    width: 25%;
+    bottom: 8px;
+    right: 16px;
+    z-index: -1;
+    opacity: 0.3;
+  }
 
 
 .mat-menu-item {
@@ -58,4 +69,73 @@ mat-sidenav .mat-button {
     font-family: Montserrat;
     margin-right: 8px;
     color: $primary;
+}
+
+.imglogo {
+    width: 250px;
+}
+
+header {
+    margin-left: 10px;
+    margin-bottom: -4em;
+    color: $primary;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    text-align: center;
+  }
+
+mat-table {
+  width: 100%;
+  border-radius: 1em;
+  overflow:hidden !important;
+  border-collapse: collapse !important;
+  // font-weight: bold;
+}
+
+.mat-header-cell {
+  font-size: 24px;
+  color: #ffff;
+  background-color: $primary;
+}
+.mat-cell {
+  text-align: left;
+  font-size: 18px;
+}
+
+.mat-column-id {
+flex: 0 0 5%;
+}
+
+.mat-column-title {
+  flex: 0 0 20%;
+}
+
+.mat-column-description {
+  flex: 0 0 60%;
+}
+
+.mat-column-price {
+  flex: 0 0 15%;
+}
+
+mat-form-field {
+  border: 2px solid $accent;
+  border-radius: 1em;
+  margin-bottom: 1em;
+  display: block;
+  text-align: left;
+  width: 30%;
+}
+
+.mat-headline {
+  text-align: left; 
+  margin-bottom: 0.1em;
 }

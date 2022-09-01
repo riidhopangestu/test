@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AppService, Products } from '../app.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
-
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -26,12 +26,16 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['../app.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  displayedColumns1: string[] = ['id', 'title', 'description', 'price'];
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
+  data: Products[] = [];
+
+  dataApp : any
   range = new FormGroup({
     start: new FormControl<Date | null>(null),
     end: new FormControl<Date | null>(null),
@@ -44,13 +48,28 @@ export class DashboardComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor() { }
+  constructor(
+    private appService : AppService
+  ) { 
+    this.appService.getDataProduct().subscribe((response:any) => {
+      this.data = response.products
+      console.log(this.data)
+    })
+  }
 
   ngAfterViewInit() {    
     this.dataSource.sort = this.empTbSort;
 }
 
   ngOnInit(): void {
+    // this.getDataApp()
   }
+
+  // getDataApp(){
+  //   this.appService.getDataApp().subscribe(res => {
+  //     this.dataApp = res
+  //     console.log(res)
+  //   })
+  // }
 
 }

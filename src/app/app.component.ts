@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +12,11 @@ export class AppComponent {
   title = 'desainaturtoko';
   opened = true;
 
-  constructor(public dialog: MatDialog) {}
+  
+
+  constructor(
+    public dialog: MatDialog
+    ) {}
 
   openDialog() {
     this.dialog.open(DialogComponent);
