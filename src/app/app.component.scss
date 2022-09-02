@@ -1,8 +1,13 @@
 @import "src/_variables.scss";
 
-.active .mat-icon {
-    color: $accent;
+.active {
+    color: $accent !important;
+    font-weight: bold;
 }
+
+.active .mat-icon{
+  color: $accent !important;
+ }
 .mat-toolbar { 
     background-color: #f8f9fa;
     height: 75px;
@@ -92,6 +97,12 @@ header {
     text-align: center;
   }
 
+  @media (max-width: 600px) {
+    .grid-container { grid-template-columns: repeat(1, 1fr); }
+  }
+div , .table {
+  border-radius: 1em;
+}
 mat-table {
   width: 100%;
   border-radius: 1em;
@@ -127,12 +138,34 @@ flex: 0 0 5%;
 }
 
 mat-form-field {
-  border: 2px solid $accent;
+  // border: 3px solid $accent;
   border-radius: 1em;
   margin-bottom: 1em;
   display: block;
   text-align: left;
   width: 30%;
+  padding: 0px;
+  font-size: 16px;
+}
+
+
+// ::ng-deep .mat-form-field-underline .mat-form-field-ripple{
+  
+//   background-color:$accent !important;
+// }
+
+// ::ng-deep .mat-form-field-underline{
+ 
+//   background-color:$accent !important;
+// }
+
+mat-paginator {
+  border-radius: 0em 0em 1em 1em;
+}
+
+mat-paginator .mat-form-field {
+  border: none;
+  margin-bottom: 10px;
 }
 
 .mat-headline {
