@@ -1,0 +1,94 @@
+@import "src/_variables.scss";
+
+header {
+    margin-left: 10px;
+    margin-bottom: -4em;
+    color: $primary;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .grid-container { grid-template-columns: repeat(1, 1fr); }
+  }
+div , .table {
+  border-radius: 1em;
+}
+mat-table {
+  width: 100%;
+  border-radius: 1em;
+  overflow:hidden !important;
+  border-collapse: collapse !important;
+  // font-weight: bold;
+}
+
+.mat-header-cell {
+  font-size: 24px;
+  color: #ffff;
+  background-color: $primary;
+}
+.mat-cell {
+  text-align: left;
+  font-size: 18px;
+}
+
+.mat-column-id {
+flex: 0 0 5%;
+}
+
+.mat-column-title {
+  flex: 0 0 20%;
+}
+
+.mat-column-description {
+  flex: 0 0 60%;
+}
+
+.mat-column-price {
+  flex: 0 0 15%;
+}
+
+mat-form-field {
+  // border: 3px solid $accent;
+  margin-bottom: 1em;
+  display: block;
+  text-align: left;
+  width: 30%;
+  padding: 0px;
+  font-size: 16px;
+}
+
+
+// ::ng-deep .mat-form-field-underline .mat-form-field-ripple{
+  
+//   background-color:$accent !important;
+// }
+
+// ::ng-deep .mat-form-field-underline{
+ 
+//   background-color:$accent !important;
+// }
+
+mat-paginator {
+  border-radius: 0em 0em 1em 1em;
+}
+
+mat-paginator .mat-form-field {
+  border: none;
+  margin-bottom: 10px;
+}
+
+.mat-headline {
+  text-align: left; 
+  margin-bottom: 0.1em;
+}
+

@@ -16,7 +16,7 @@ const ELEMENT_DATA: Products[] = [];
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['../app.component.scss']
+  styleUrls: ['../app.component.scss', './dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
   displayedColumns1: string[] = ['id', 'title', 'description', 'price'];
