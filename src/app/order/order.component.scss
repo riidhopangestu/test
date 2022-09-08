@@ -1,0 +1,50 @@
+@import "src/_variables.scss";
+
+header {
+    margin-left: 10px;
+    margin-bottom: -4em;
+    color: $primary;
+}
+
+mat-grid-list {
+    margin-bottom: 5px;
+}
+
+mat-grid-tile {
+    font-size: 1rem !important;
+}
+
+mat-grid-tile mat-form-field {
+    width: 100%;
+    margin-top: 15px;
+}
+
+mat-button-toggle-group {
+    width: 100%;
+    margin-bottom: 5px;
+    border-color: $accent;
+}
+
+// mat-button-toggle {
+//     width: 100%;
+//     background-color: $accent;
+//     border-color: $accent;
+// }
+
+.mat-button-toggle{
+    width: 100%;
+    background-color: $accent;
+    color: #000000;
+}
+
+.mat-button-toggle:hover {
+    background-color: #62c236;
+    color: #ffffff !important;    
+}
+
+.mat-button-toggle-checked {
+    background-color: #64bf30;
+    color: #ffffff !important;
+    box-shadow: inset 0 1px 0 hsl(0deg 0% 100% / 15%), 0 1px 1px rgb(0 0 0 / 8%);
+}
+
