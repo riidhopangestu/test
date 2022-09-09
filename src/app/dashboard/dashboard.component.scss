@@ -1,11 +1,5 @@
 @import "src/_variables.scss";
 
-header {
-    margin-left: 10px;
-    margin-bottom: -4em;
-    color: $primary;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -20,41 +14,25 @@ header {
   @media (max-width: 600px) {
     .grid-container { grid-template-columns: repeat(1, 1fr); }
   }
-div , .table {
-  border-radius: 1em;
-}
-mat-table {
-  width: 100%;
-  border-radius: 1em;
-  overflow:hidden !important;
-  border-collapse: collapse !important;
-  // font-weight: bold;
-}
-
-.mat-header-cell {
-  font-size: 24px;
-  color: #ffff;
-  background-color: $primary;
-}
-.mat-cell {
-  text-align: left;
-  font-size: 18px;
-}
 
 .mat-column-id {
-flex: 0 0 5%;
+flex: 0 0 5% !important;
+width: 5% !important;
 }
 
 .mat-column-title {
-  flex: 0 0 20%;
+  flex: 0 0 20% !important;
+  width: 20% !important;
 }
 
 .mat-column-description {
-  flex: 0 0 60%;
+  flex: 0 0 60% !important;
+  width: 60% !important;
 }
 
 .mat-column-price {
-  flex: 0 0 15%;
+  flex: 0 0 15% !important;
+  width: 15% !important;
 }
 
 mat-form-field {
