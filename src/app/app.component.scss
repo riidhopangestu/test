@@ -10,7 +10,7 @@
  }
 .mat-toolbar { 
     background-color: #f8f9fa;
-    height: 75px;
+    height: 60px;
     padding: 8px;
     padding-left: 0px;
     position: sticky;
@@ -20,7 +20,8 @@
 
 .mat-toolbar .mat-button {
     font-family: Montserrat;
-    font-size: 20px;
+    font-size: 14px;
+    display: block;
 }
 
 .menu-spacer {
@@ -29,27 +30,40 @@
 
 mat-sidenav {
     background-color: whitesmoke;
-    width: 230px;
+    height: 100%;
+    border-right: none;
     overflow: hidden;
 }
 mat-sidenav-content {
     background-color: white;
+    overflow: auto !important;
 }
+
+.menutoggle {
+    background-color: white !important;
+    opacity: 0.6;
+    color: black;
+    position: fixed !important;
+    top: 0 !important;
+    // margin-left: -20px !important;
+}
+
+.mat-sidenav-content::-webkit-scrollbar {
+    display: none;
+}
+
 mat-sidenav .mat-button {
     font-family: Montserrat;
-    font-size: 19px;
-    padding: 10px;
-    margin-bottom: 5px;
+    font-size: 14px;
     color: $primary;
+    width: 100%;
+    text-align: left;
 }
 
 mat-sidenav-container {
     height: 100%;
 }
 
-mat-sidenav, mat-sidenav-content {
-    padding: 16px;    
-}
 
 .backgroundimg {
     position: fixed;
@@ -62,7 +76,7 @@ mat-sidenav, mat-sidenav-content {
 
 
 .mat-menu-item {
-    font-size: 20px !important;
+    font-size: 14px !important;
     color: $primary;
 }
 
@@ -77,14 +91,47 @@ mat-sidenav, mat-sidenav-content {
 }
 
 .imglogo {
-    width: 250px;
+    width: 140px;
+    margin: 5px 16px;
 }
+
+.imgminilogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30px;
+  margin: 5px 16px;
+}
+
 
 header {
     margin-left: 10px;
-    margin-bottom: -4em;
+    font-size: 26px;
+    margin-bottom: -2.8em;
     color: $primary;
 }
+
+div , .table {
+    border-radius: 1em;
+  }
+  mat-table {
+    width: 100%;
+    border-radius: 1em 1em 0em 0em;
+    overflow:hidden !important;
+    border-collapse: collapse !important;
+    // font-weight: bold;
+  }
+  
+  .mat-header-cell {
+    font-size: 14px;
+    color: #ffff;
+    background-color: $primary;
+  }
+  .mat-cell {
+    text-align: left;
+    font-size: 14px;
+  }
+  
 
 .mat-form-field-appearance-outline .mat-form-field-outline {
     color: $primary;
@@ -112,5 +159,5 @@ header {
 }
 
 mat-form-field {
-    font-size: 16px;
+    font-size: 13.6px;
 }

@@ -11,6 +11,7 @@ import { DialogComponent } from './dialog/dialog.component';
 export class AppComponent {
   title = 'desainaturtoko';
   opened = true;
+  showText = false;
 
   
 
