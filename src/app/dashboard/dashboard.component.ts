@@ -4,15 +4,12 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ProducttableDetailComponent } from '../producttable-detail/producttable-detail.component';
+import { NavigationExtras } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 const ELEMENT_DATA: Products[] = [];
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -22,9 +19,8 @@ export class DashboardComponent implements OnInit {
   displayedColumns1: string[] = ['id', 'title', 'description', 'price'];
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-  data: Products[] = [];
 
-  dataApp : any
+  
   posts : any
 
   searchField: string = '';
@@ -47,7 +43,9 @@ export class DashboardComponent implements OnInit {
   }
 
   constructor(
-    private appService : AppService
+    public dialog: MatDialog,
+    private appService : AppService,
+    private http : HttpClient
   ) { 
     this.appService.getDataProduct().subscribe((response:any) => {
       this.dataSource = response.products
@@ -57,21 +55,21 @@ export class DashboardComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.posts);
       this.dataSource.paginator = this.paginator
       this.dataSource.sort = this.sort
+
     })
   }
 
-  ngAfterViewInit() {
-}
-
   ngOnInit(): void {
-    // this.getDataApp()
+    
   }
 
-  // getDataApp(){
-  //   this.appService.getDataApp().subscribe(res => {
-  //     this.dataApp = res
-  //     console.log(res)
-  //   })
-  // }
+  openDetail(product: any): void {
+    let dialogRef = this.dialog.open(ProducttableDetailComponent, {
+      data : product.id 
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 
 }

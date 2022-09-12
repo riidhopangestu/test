@@ -7,6 +7,7 @@ mat-grid-list {
 
 mat-grid-tile {
     font-size: 1rem !important;
+    width: 100%;
 }
 
 mat-grid-tile mat-form-field {
@@ -20,6 +21,9 @@ mat-button-toggle-group {
     border-color: $accent;
 }
 
+mat-grid-tile mat-form-field {
+    width: 100% !important;
+  }
 // mat-button-toggle {
 //     width: 100%;
 //     background-color: $accent;

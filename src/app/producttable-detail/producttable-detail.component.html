@@ -1,0 +1,21 @@
+<mat-toolbar>
+    <h2 mat-dialog-title>Product Data</h2>
+</mat-toolbar>
+
+<mat-dialog-content class="mat-typography">
+
+  <ul>
+    <li >
+      {{productdetail?.id}}
+    </li>
+    <li>
+      {{productdetail?.title}}
+    </li>
+    <li>
+      {{productdetail?.description}}
+    </li>
+  </ul>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
