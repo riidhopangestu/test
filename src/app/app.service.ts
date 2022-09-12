@@ -23,4 +23,8 @@ export class AppService {
   getDataProduct(): Observable<Products[]>{
     return this.http.get<Products[]>(this.url);
   }
+
+  getDetailProduct(id: string): Observable<Products[]>{
+    return this.http.get<Products[]>(this.url + '/' + id);
+  }
 }

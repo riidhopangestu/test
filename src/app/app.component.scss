@@ -36,6 +36,7 @@ mat-sidenav {
 }
 mat-sidenav-content {
     background-color: white;
+    padding-right: 16px;
     overflow: auto !important;
 }
 
@@ -45,6 +46,7 @@ mat-sidenav-content {
     color: black;
     position: fixed !important;
     top: 0 !important;
+    z-index: 3;
     // margin-left: -20px !important;
 }
 
@@ -105,18 +107,18 @@ mat-sidenav-container {
 
 
 header {
-    margin-left: 10px;
     font-size: 26px;
-    margin-bottom: -2.8em;
+    margin-left: 10px;
+    margin-bottom: -2.5em;
     color: $primary;
 }
 
-div , .table {
-    border-radius: 1em;
-  }
+// div , .table {
+//     border-radius: 1em;
+//   }
   mat-table {
     width: 100%;
-    border-radius: 1em 1em 0em 0em;
+    // border-radius: 1em 1em 0em 0em;
     overflow:hidden !important;
     border-collapse: collapse !important;
     // font-weight: bold;
@@ -125,13 +127,22 @@ div , .table {
   .mat-header-cell {
     font-size: 14px;
     color: #ffff;
+    justify-content: center;
     background-color: $primary;
   }
   .mat-cell {
     text-align: left;
     font-size: 14px;
+    justify-content: center;
+  }
+
+  .mat-row:hover .mat-cell {
+    background-color: #ebebeb;
   }
   
+mat-form-field {
+    width: 50% !important;
+  }
 
 .mat-form-field-appearance-outline .mat-form-field-outline {
     color: $primary;
@@ -139,6 +150,11 @@ div , .table {
   /* Font color */
   input.mat-input-element {
     color: black;
+  }
+
+
+  .mat-form-field:not(.mat-form-field-has-label) .mat-form-field-infix {
+    border-top-width: 0;
   }
   //mat-input focused color
 ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
@@ -158,6 +174,7 @@ div , .table {
     border-radius: 0.7rem !important;
 }
 
-mat-form-field {
-    font-size: 13.6px;
+mat-expansion-panel {
+  margin: 16px;
+  margin-left: 10px;
 }

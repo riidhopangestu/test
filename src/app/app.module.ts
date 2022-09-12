@@ -18,6 +18,23 @@ import { SettingUserComponent } from './setting-user/setting-user.component';
 import { SettingMarketplaceComponent } from './setting-marketplace/setting-marketplace.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ProducttableDetailComponent } from './producttable-detail/producttable-detail.component';
+
+
+const MY_DATE_FORMAT = {
+  parse: {
+    dateInput: 'DD/MM/YYYY', // this is how your date will be parsed from Input
+  },
+  display: {
+    dateInput: 'DD MMMM YYYY', // this is how your date will get displayed on the Input
+    monthYearLabel: 'MMMM YYYY',
+    dateA11yLabel: 'DD MMMM YYYY',
+    monthYearA11yLabel: 'MMMM YYYY'
+  }
+};
 
 @NgModule({
   declarations: [
@@ -31,7 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
     SystemposComponent,
     SettingUserComponent,
     SettingMarketplaceComponent,
-    DialogComponent
+    DialogComponent,
+    ProducttableDetailComponent
   ],
   entryComponents: [DialogComponent],
   imports: [
@@ -41,9 +59,13 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
-  providers: [],
+  providers: [
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMAT }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

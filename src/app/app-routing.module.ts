@@ -9,6 +9,7 @@ import { ProductComponent } from './product/product.component';
 import { SettingMarketplaceComponent } from './setting-marketplace/setting-marketplace.component';
 import { SettingUserComponent } from './setting-user/setting-user.component';
 import { SystemposComponent } from './systempos/systempos.component';
+import { ProducttableDetailComponent } from './producttable-detail/producttable-detail.component';
 
 const routes: Routes = [
   { 
@@ -22,6 +23,9 @@ const routes: Routes = [
   },
   {
     path: 'product', component: ProductComponent, title: "Produk - AturToko" 
+  },
+  {
+    path: 'product/:id', component: ProducttableDetailComponent, title: "Produk Detail - AturToko" 
   },
   {
     path: 'customer', component: CustomerComponent, title: "Pelanggan - AturToko" 

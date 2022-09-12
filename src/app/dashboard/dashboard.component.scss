@@ -1,34 +1,33 @@
 @import "src/_variables.scss";
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    gap: 20px;
+.container {
     padding: 10px;
   }
-  
-  .grid-container > div {
-    text-align: center;
-  }
 
-  @media (max-width: 600px) {
-    .grid-container { grid-template-columns: repeat(1, 1fr); }
-  }
+@media (max-width: 600px) {
+  .fliter { width: 100% !important; }
+}
+
+.black {
+  color: $accent;
+ }
+
+
 
 .mat-column-id {
 flex: 0 0 5% !important;
 width: 5% !important;
 }
 
-.mat-column-title {
-  flex: 0 0 20% !important;
-  width: 20% !important;
-}
+// .mat-column-title {
+//   flex: 0 0 20% !important;
+//   width: 20% !important;
+// }
 
-.mat-column-description {
-  flex: 0 0 60% !important;
-  width: 60% !important;
-}
+// .mat-column-description {
+//   flex: 0 0 60% !important;
+//   width: 60% !important;
+// }
 
 .mat-column-price {
   flex: 0 0 15% !important;
@@ -44,17 +43,6 @@ mat-form-field {
   padding: 0px;
   font-size: 16px;
 }
-
-
-// ::ng-deep .mat-form-field-underline .mat-form-field-ripple{
-  
-//   background-color:$accent !important;
-// }
-
-// ::ng-deep .mat-form-field-underline{
- 
-//   background-color:$accent !important;
-// }
 
 mat-paginator {
   border-radius: 0em 0em 1em 1em;
