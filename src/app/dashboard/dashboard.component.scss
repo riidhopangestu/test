@@ -1,18 +1,8 @@
 @import "src/_variables.scss";
 
-.container {
-    padding: 10px;
-  }
-
-@media (max-width: 600px) {
-  .fliter { width: 100% !important; }
-}
-
 .black {
   color: $accent;
  }
-
-
 
 .mat-column-id {
 flex: 0 0 5% !important;
@@ -39,7 +29,6 @@ mat-form-field {
   margin-bottom: 1em;
   display: block;
   text-align: left;
-  width: 30%;
   padding: 0px;
   font-size: 16px;
 }
@@ -57,4 +46,14 @@ mat-paginator .mat-form-field {
   text-align: left; 
   margin-bottom: 0.1em;
 }
+
+img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+// ::ng-deep .mat-form-field-wrapper{
+//    margin-bottom: -1.25em;
+// }
 

@@ -2,20 +2,42 @@
     <h2 mat-dialog-title>Product Data</h2>
 </mat-toolbar>
 
+<div>
 <mat-dialog-content class="mat-typography">
-
-  <ul>
-    <li >
-      {{productdetail?.id}}
-    </li>
-    <li>
-      {{productdetail?.title}}
-    </li>
-    <li>
-      {{productdetail?.description}}
-    </li>
-  </ul>
+  <div fxLayout="row wrap" class="container">
+    <div fxFlex="25%">
+      <div>Nama</div>
+    </div>
+    <div fxFlex="75%">
+      <div>{{productdetail?.title}}</div>
+    </div>
+  </div>
+  <div fxLayout="row wrap" class="container">
+    <div fxFlex="25%">
+      <div>Deskripsi</div>
+    </div>
+    <div fxFlex="75%">
+      <div>{{productdetail?.description}}</div>
+    </div>
+  </div>
+  <div fxLayout="row wrap" class="container">
+    <div fxFlex="25%">
+      <div>Brand</div>
+    </div>
+    <div fxFlex="75%">
+      <div>{{productdetail?.brand}}</div>
+    </div>
+  </div>
+  <div fxLayout="row wrap" class="container">
+    <div fxFlex="25%">
+      <div>Kategori</div>
+    </div>
+    <div fxFlex="75%">
+      <div>{{productdetail?.category}}</div>
+    </div>
+  </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Close</button>
 </mat-dialog-actions>
+</div>

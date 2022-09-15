@@ -1,37 +1,27 @@
 @import "src/_variables.scss";
 
-mat-grid-list {
-    margin-bottom: 5px;
-    margin-left: 10px;
-}
-
-mat-grid-tile {
-    font-size: 1rem !important;
-    width: 100%;
-}
-
-mat-grid-tile mat-form-field {
-    width: 100%;
-    margin-top: 15px;
+mat-form-field {
+    // border: 3px solid $accent;
+    margin-bottom: 1em;
+    display: block;
+    text-align: left;
+    padding: 0px;
+    font-size: 16px;
 }
 
 mat-button-toggle-group {
-    width: 100%;
     margin-bottom: 5px;
     border-color: $accent;
 }
 
-mat-grid-tile mat-form-field {
-    width: 100% !important;
-  }
 // mat-button-toggle {
 //     width: 100%;
 //     background-color: $accent;
 //     border-color: $accent;
 // }
 
+
 .mat-button-toggle{
-    width: 100%;
     background-color: $accent;
     color: #000000;
 }
