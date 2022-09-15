@@ -1,28 +1,30 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AppService, Products } from '../app.service';
+import { AppService, Products, Users } from '../app.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ProducttableDetailComponent } from '../producttable-detail/producttable-detail.component';
-import { NavigationExtras } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 const ELEMENT_DATA: Products[] = [];
+const ELEMENT_USER: Users[] = [];
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['../app.component.scss', './dashboard.component.scss']
+  styleUrls: ['../app.component.scss', './dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  displayedColumns1: string[] = ['id', 'title', 'description', 'price'];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns1: string[] = ['id', 'title', 'thumbnail', 'description', 'stock', 'price'];
+  displayedColumnsUser: string[] = ['id', 'firstName', 'lastName', 'birthDate'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+  dataSourceUser = new MatTableDataSource(ELEMENT_USER);
 
   
   posts : any
-
+  posts1 : any
   searchField: string = '';
   clearSearchField() {
     this.searchField = '';
@@ -56,6 +58,15 @@ export class DashboardComponent implements OnInit {
       this.dataSource.paginator = this.paginator
       this.dataSource.sort = this.sort
 
+    }),
+    this.appService.getDataUser().subscribe((data:any) => {
+      this.dataSourceUser = data.users
+      console.log(this.dataSourceUser)
+      this.posts1 = this.dataSourceUser
+
+      this.dataSourceUser = new MatTableDataSource(this.posts1);
+      this.dataSourceUser.paginator = this.paginator
+      this.dataSourceUser.sort = this.sort
     })
   }
 
@@ -65,6 +76,8 @@ export class DashboardComponent implements OnInit {
 
   openDetail(product: any): void {
     let dialogRef = this.dialog.open(ProducttableDetailComponent, {
+      height: '300px',
+      width: '600px',
       data : product.id 
     });
     dialogRef.afterClosed().subscribe(result => {
