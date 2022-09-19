@@ -7,9 +7,20 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ProducttableDetailComponent } from '../producttable-detail/producttable-detail.component';
 import { HttpClient } from '@angular/common/http';
+import { Chart, registerables } from 'chart.js';
+import { _countGroupLabelsBeforeOption } from '@angular/material/core';
 
 const ELEMENT_DATA: Products[] = [];
 const ELEMENT_USER: Users[] = [];
+
+const labels = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+];
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -22,9 +33,16 @@ export class DashboardComponent implements OnInit {
 
   dataSourceUser = new MatTableDataSource(ELEMENT_USER);
 
-  
   posts : any
   posts1 : any
+
+  chart1 : any
+
+  result: any;
+  coinPrice: any;
+  coinName: any;
+  chart: any = [];
+
   searchField: string = '';
   clearSearchField() {
     this.searchField = '';
@@ -68,9 +86,67 @@ export class DashboardComponent implements OnInit {
       this.dataSourceUser.paginator = this.paginator
       this.dataSourceUser.sort = this.sort
     })
+
+    Chart.register(...registerables);
   }
 
   ngOnInit(): void {
+    this.appService.cryptoData().subscribe((res) => {
+      this.result = res;
+      this.coinPrice = this.result.data.coins.map((coins: any) => coins.price);
+      this.coinName = this.result.data.coins.map((coins: any) => coins.name);
+      console.log(this.coinPrice);
+      console.log(this.coinName);
+
+      this.chart = new Chart('canvas', {
+        type: 'line',
+        data: {
+          labels: this.coinName,
+          datasets: [
+            {
+              data: this.coinPrice,
+              borderColor: '#764cac',
+              fill: false,
+              label: 'Woocommerce',
+              backgroundColor: '#baa5d5',
+              borderWidth: 3,
+            },
+            {
+              data: this.coinPrice,
+              borderColor: '#d71149',
+              fill: false,
+              label: 'Bukalapak',
+              backgroundColor: '#eb88a4',
+              borderWidth: 3,
+            },
+            {
+              data: this.coinPrice,
+              borderColor: '#0095da',
+              fill: false,
+              label: 'Blibli',
+              backgroundColor: '#7fcaec',
+              borderWidth: 3,
+            },
+            {
+              data: this.coinPrice,
+              borderColor: '#ee4d2d',
+              fill: false,
+              label: 'Shopee',
+              backgroundColor: '#f6a696',
+              borderWidth: 3,
+            },
+            {
+              data: this.coinPrice,
+              borderColor: '#a20a0a',
+              fill: false,
+              label: 'Buattoko',
+              backgroundColor: '#d08484',
+              borderWidth: 3,
+            },
+          ],
+        },
+      });
+    });
     
   }
 

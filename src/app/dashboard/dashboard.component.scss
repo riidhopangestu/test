@@ -29,6 +29,7 @@ mat-form-field {
   margin-bottom: 1em;
   display: block;
   text-align: left;
+  width: 50% !important;
   padding: 0px;
   font-size: 16px;
 }
@@ -44,7 +45,7 @@ mat-paginator .mat-form-field {
 
 .mat-headline {
   text-align: left; 
-  margin-bottom: 0.1em;
+  margin-bottom: -0.7em;
 }
 
 img {

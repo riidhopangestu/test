@@ -148,10 +148,6 @@ header {
   .datepicker { width: 100% !important; }
 }
 
-mat-form-field {
-  width: 50% !important;
-}
-
 .mat-form-field[dense] {
   .mat-form-field-flex > .mat-form-field-infix {
     padding: 1.5em 0px !important;
@@ -195,6 +191,11 @@ mat-form-field {
 //   ::ng-deep .mat-form-field-outline-end {
 //     border-radius: 0 0.7rem 0.7rem 0 !important;
 //   }
+
+.mat-button-toggle-label-content{
+  line-height: 0px !important;
+  padding: 20px 10px 10px 10px !important
+}
 
   :host .mat-button-toggle-group{
     border-radius: 0.7rem !important;
