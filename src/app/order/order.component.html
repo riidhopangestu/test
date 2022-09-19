@@ -10,9 +10,9 @@
             </mat-panel-title>
         </mat-expansion-panel-header>
     </mat-expansion-panel> -->
-    <div fxLayout="row" class="container">
+    <div fxLayout="row wrap" class="container">
         <div fxFlex="25%" fxFlex.lt-md="50%" fxFlex.xs="100%">
-            <mat-form-field appearance="standard" class="filter mat-form-field-no-padding">
+            <mat-form-field dense appearance="standard" class="filter mat-form-field-no-padding">
                 <input matInput placeholder="Filter">
                 <button mat-button mat-icon-button matSuffix>
                     <mat-icon color="warn">close</mat-icon>
@@ -27,9 +27,8 @@
                 <mat-button-toggle value="all">Semua</mat-button-toggle>
             </mat-button-toggle-group>
         </div>
-        <div fxFlex="25%" fxFlex.lt-md="50%" fxFlex.xs="100%">
-            <mat-form-field appearance="standard" color="accent" class="datepicker filter mat-form-field-no-padding2">
-                <mat-label>Enter a date range</mat-label>
+        <div fxFlex="35%" fxFlex.lt-md="50%" fxFlex.xs="100%">
+            <mat-form-field dense appearance="standard" color="accent" class="datepicker filter mat-form-field-no-padding2">
                 <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
                     <input matStartDate formControlName="start" placeholder="Start date">
                     <input matEndDate formControlName="end" placeholder="End date">
@@ -45,12 +44,35 @@
             </mat-form-field>
         </div>
         <div fxFlex="25%" fxFlex.lt-md="50%" fxFlex.xs="100%">
-            <mat-form-field appearance="standard" color="accent" filter mat-form-field-no-padding>
-                <input matInput placeholder="Filter">
-                <button mat-button mat-icon-button matSuffix>
-                    <mat-icon color="warn">close</mat-icon>
-                  </button>
-            </mat-form-field>
+            <mat-form-field dense class="example-chip-list" appearance="standard" class="filter mat-form-field-no-padding">
+                <mat-select multiple>
+                    <mat-select-trigger>
+                <mat-chip-list #chipList aria-label="Fruit selection">
+                  <mat-chip
+                    *ngFor="let fruit of fruits"
+                    (removed)="remove(fruit)">
+                    {{fruit}}
+                    <button matChipRemove>
+                      <mat-icon>cancel</mat-icon>
+                    </button>
+                  </mat-chip>
+                  <input
+                    placeholder="New fruit..."
+                    #fruitInput
+                    [formControl]="fruitCtrl"
+                    [matAutocomplete]="auto"
+                    [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+                    </mat-select-trigger>
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                  <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+                    {{fruit}}
+                  </mat-option>
+                </mat-autocomplete>
+                </mat-select>
+              </mat-form-field>
         </div>
         <div fxFlex="25%" fxFlex.lt-md="50%" fxFlex.xs="100%">
 
