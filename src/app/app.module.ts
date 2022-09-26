@@ -22,6 +22,7 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProducttableDetailComponent } from './producttable-detail/producttable-detail.component';
+import { SpeedDialFabComponent } from './speed-dial-fab/speed-dial-fab.component';
 
 
 const MY_DATE_FORMAT = {
@@ -49,7 +50,8 @@ const MY_DATE_FORMAT = {
     SettingUserComponent,
     SettingMarketplaceComponent,
     DialogComponent,
-    ProducttableDetailComponent
+    ProducttableDetailComponent,
+    SpeedDialFabComponent
   ],
   entryComponents: [DialogComponent],
   imports: [
@@ -64,7 +66,7 @@ const MY_DATE_FORMAT = {
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
-    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMAT }
+    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMAT },
   ],
   bootstrap: [AppComponent]
 })

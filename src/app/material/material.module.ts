@@ -80,6 +80,8 @@ const MaterialComponents = [
   ],
   exports: [
     MaterialComponents,
+  ],
+  providers: [
   ]
 })
 export class MaterialModule { }

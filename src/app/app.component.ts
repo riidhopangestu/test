@@ -12,8 +12,6 @@ export class AppComponent {
   opened = true;
   showText = false;
 
-  
-
   constructor(
     public dialog: MatDialog
     ) {}

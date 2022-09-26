@@ -101,7 +101,7 @@ mat-sidenav-container {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 30px;
+  width: 40px;
   margin: 5px 16px;
 }
 
@@ -205,3 +205,33 @@ mat-expansion-panel {
   margin: 16px;
   margin-left: 10px;
 }
+
+// ::ng-deep .mat-tab-group {
+//   flex-direction: row !important;
+// }
+// ::ng-deep .mat-tab-header {
+//   border-bottom: none;
+// }
+// ::ng-deep .mat-tab-header-pagination {
+//   display: none !important;
+// }
+// ::ng-deep .mat-tab-labels {
+//   flex-direction: column;
+// }
+// ::ng-deep .mat-ink-bar {
+//   height: 100%;
+//   left: 98% !important;
+// }
+// ::ng-deep .mat-tab-body-wrapper {
+//   flex: 1 1 auto;
+// }
+
+// mat-tab-group[vertical] .mat-tab-labels {
+//   display: flex;
+//   flex-direction: column!important;
+// }
+
+// mat-tab-group[vertical] {
+//   display: flex;
+//   flex-direction: row!important;
+// }
