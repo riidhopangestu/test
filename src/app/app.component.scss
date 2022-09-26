@@ -50,6 +50,17 @@ mat-sidenav-content {
     // margin-left: -20px !important;
 }
 
+.usermenu {
+  background-color: white !important;
+  opacity: 0.6;
+  color: black;
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  z-index: 3;
+  // margin-left: -20px !important;
+}
+
 .mat-sidenav-content::-webkit-scrollbar {
     display: none;
 }
