@@ -52,8 +52,8 @@
   </mat-toolbar-row>
 </mat-toolbar> -->
 
-<mat-sidenav-container autosize>
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="mat-elevation-z4">
+<mat-sidenav-container autosize >
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="mat-elevation-z4" *ngIf="isLoggedIn">
     <!-- <img style="width: 200px; " src="assets/img/aturtokologo.png" alt="AturToko"> -->
       <!-- <img style="width: 200px; " src="assets/img/aturtokologo.png" alt="AturToko"> -->
       <img *ngIf="showText" src="assets/img/aturtokologo.png" alt="AturToko" class="imglogo" >
@@ -84,11 +84,11 @@
 
 
   <mat-sidenav-content>
-    <button mat-mini-fab class="menutoggle" (click)="showText = !showText;">
+    <button mat-mini-fab *ngIf="isLoggedIn" class="menutoggle" (click)="showText = !showText;">
       <mat-icon *ngIf="showText">arrow_back</mat-icon>
       <mat-icon *ngIf="!showText">menu</mat-icon>
     </button>
-    <img src="assets/img/logobawah.png" alt="AturToko" class="backgroundimg" >
+    <img src="assets/img/logobawah.png" *ngIf="isLoggedIn" alt="AturToko" class="backgroundimg" >
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

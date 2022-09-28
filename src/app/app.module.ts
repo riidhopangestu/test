@@ -31,6 +31,7 @@ import { BoardModeratorComponent } from './auth/board-moderator/board-moderator.
 import { BoardUserComponent } from './auth/board-user/board-user.component';
 import { HomeComponent } from './auth/home/home.component';
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
+import { SnackbarComponent } from './snackbar/snackbar.component';
 
 
 
@@ -68,6 +69,7 @@ const MY_DATE_FORMAT = {
     BoardModeratorComponent,
     BoardUserComponent,
     HomeComponent,
+    SnackbarComponent,
   ],
   entryComponents: [DialogComponent],
   imports: [

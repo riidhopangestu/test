@@ -1,10 +1,17 @@
-<div class="col-md-12">
-    <div class="card card-container">
-      <img
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
-      />
+<body>
+  <img class="wave" src="assets/img/wave.svg">
+  <div class="container">
+    <div class="img">
+      <img src="assets\img\ec-logo\logo-omnipos.png" alt="OmniPos">
+    </div>
+    <div class="login-content">
+    <div mat-card class="card mat-elevation-z8">
+      <mat-card-header>
+        <mat-card-title>
+          <div class="mat-display-1"><strong>Login</strong></div>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
       <form
         *ngIf="!isLoggedIn"
         name="form"
@@ -12,9 +19,9 @@
         #f="ngForm"
         novalidate
       >
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input
+        <mat-form-field appearance="standard" color="primary" class="form-group">
+          <mat-label for="username"><strong>Username</strong></mat-label>
+          <input matInput
             type="text"
             class="form-control"
             name="username"
@@ -29,10 +36,10 @@
           >
             Username is required!
           </div>
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
+        </mat-form-field>
+        <mat-form-field appearance="standard" color="primary" class="form-group">
+          <mat-label for="password">Password</mat-label>
+          <input matInput
             type="password"
             class="form-control"
             name="password"
@@ -51,9 +58,9 @@
               Password must be at least 6 characters
             </div>
           </div>
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary btn-block">
+        </mat-form-field>
+        <div class="button">
+          <button mat-button class="buttonlogin">
             Login
           </button>
         </div>
@@ -71,5 +78,8 @@
       <div class="alert alert-success" *ngIf="isLoggedIn">
         Logged in as {{ roles }}.
       </div>
+    </mat-card-content>
     </div>
   </div>
+  </div>
+</body>

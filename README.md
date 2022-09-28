@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 
+## Start Project
+ Go to node directory `cd node-js-jwt-auth-mongodb` then turn on node using `node server.js`. 
+ Open new terminal then `ng serve --port 8081 -o` to start this project
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
