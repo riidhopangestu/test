@@ -52,43 +52,44 @@
   </mat-toolbar-row>
 </mat-toolbar> -->
 
-<mat-sidenav-container autosize>
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="mat-elevation-z4">
+<mat-sidenav-container autosize >
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="mat-elevation-z4" *ngIf="isLoggedIn">
     <!-- <img style="width: 200px; " src="assets/img/aturtokologo.png" alt="AturToko"> -->
       <!-- <img style="width: 200px; " src="assets/img/aturtokologo.png" alt="AturToko"> -->
       <img *ngIf="showText" src="assets/img/aturtokologo.png" alt="AturToko" class="imglogo" >
       <img *ngIf="!showText" src="assets/img/logobawah.png" alt="AturToko" class="imgminilogo" >
       <mat-divider></mat-divider>
       
-      <div><button mat-button routerLink="dashboard" routerLinkActive="active"><mat-icon>home</mat-icon><span *ngIf="showText">Halaman Muka</span></button></div> 
-      <div><button mat-button routerLink="order" routerLinkActive="active"><mat-icon>shopping_cart</mat-icon><span *ngIf="showText">Order</span></button></div>
-      <div><button mat-button routerLink="product" routerLinkActive="active"><mat-icon>shopping_bag</mat-icon><span *ngIf="showText">Produk</span></button></div>
-      <div><button mat-button routerLink="customer" routerLinkActive="active"><mat-icon>people_alt</mat-icon><span *ngIf="showText">Pelanggan</span></button></div>
-      <div><button mat-button routerLink="document" routerLinkActive="active"><mat-icon>folder</mat-icon><span *ngIf="showText">Laporan</span></button></div>
-      <div><button mat-button routerLink="manualsync" routerLinkActive="active"><mat-icon>sync</mat-icon><span *ngIf="showText">Manual Sync</span></button></div>
-      <div><button mat-button [matMenuTriggerFor]="pengaturan" routerLinkActive="active"><mat-icon>settings</mat-icon><span *ngIf="showText">Pengaturan</span></button></div>
+      <div><button mat-button routerLink="dashboard" routerLinkActive="active"><mat-icon>home</mat-icon><span *ngIf="showText"> Halaman Muka</span></button></div> 
+      <div><button mat-button routerLink="order" routerLinkActive="active"><mat-icon>shopping_cart</mat-icon><span *ngIf="showText"> Order</span></button></div>
+      <div><button mat-button routerLink="product" routerLinkActive="active"><mat-icon>shopping_bag</mat-icon><span *ngIf="showText"> Produk</span></button></div>
+      <div><button mat-button routerLink="customer" routerLinkActive="active"><mat-icon>people_alt</mat-icon><span *ngIf="showText"> Pelanggan</span></button></div>
+      <div><button mat-button routerLink="document" routerLinkActive="active"><mat-icon>folder</mat-icon><span *ngIf="showText"> Laporan</span></button></div>
+      <div><button mat-button routerLink="manualsync" routerLinkActive="active"><mat-icon>sync</mat-icon><span *ngIf="showText"> Manual Sync</span></button></div>
+      <div><button mat-button [matMenuTriggerFor]="pengaturan" routerLinkActive="active"><mat-icon>settings</mat-icon><span *ngIf="showText"> Pengaturan</span></button></div>
       <div><mat-menu #pengaturan="matMenu" >
         <button mat-menu-item routerLink="setting-user" routerLinkActive="active"><mat-icon>groups</mat-icon> Pengguna</button>
         <button mat-menu-item routerLink="setting-marketplace" routerLinkActive="active"><mat-icon>store</mat-icon> Marketplace Saya</button>
         <button mat-menu-item disabled routerLinkActive="active"><mat-icon>storefront</mat-icon> Setting BuatToko</button>
       </mat-menu></div>
-      <div><button mat-button routerLink="systempos" routerLinkActive="active"><mat-icon>point_of_sale</mat-icon><span *ngIf="showText">Sistem POS</span></button></div>
-    <!-- <span class="menu-spacer"></span>
-      <button mat-button color="primary" [matMenuTriggerFor]="user">User</button>
+      <div><button mat-button routerLink="systempos" routerLinkActive="active"><mat-icon>point_of_sale</mat-icon><span *ngIf="showText"> Sistem POS</span></button></div>
+    <span class="menu-spacer"></span>
+      <button mat-button class="buttonuser" color="primary" [matMenuTriggerFor]="user" routerLinkActive="active"><mat-icon>account_circle</mat-icon><span *ngIf="showText"> {{ username }}</span></button>
       <mat-menu #user="matMenu" >
-        <button mat-menu-item><mat-icon color="primary">manage_accounts</mat-icon>Akun Saya</button>
-        <button mat-menu-item (click)="openDialog()"><mat-icon color="primary">logout</mat-icon>Logout</button>
-      </mat-menu> -->
+        <button mat-menu-item><mat-icon color="primary">manage_accounts</mat-icon> Akun Saya</button>
+        <button mat-menu-item (click)="openDialog()"><mat-icon color="primary">logout</mat-icon> Logout</button>
+      </mat-menu>
+      <div><button mat-button (click)="logout()" routerLinkActive="active"><mat-icon>point_of_sale</mat-icon><span *ngIf="showText"> Logout</span></button></div>
     
   </mat-sidenav>
 
 
   <mat-sidenav-content>
-    <button mat-mini-fab class="menutoggle" (click)="showText = !showText;">
+    <button mat-mini-fab *ngIf="isLoggedIn" class="menutoggle" (click)="showText = !showText;">
       <mat-icon *ngIf="showText">arrow_back</mat-icon>
       <mat-icon *ngIf="!showText">menu</mat-icon>
     </button>
-    <img src="assets/img/logobawah.png" alt="AturToko" class="backgroundimg" >
+    <img src="assets/img/logobawah.png" *ngIf="isLoggedIn" alt="AturToko" class="backgroundimg" >
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

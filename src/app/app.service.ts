@@ -12,6 +12,14 @@ const httpOptions = {
   }),
 };
 
+const httpOptions2 = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': 'https://api.coinranking.com/v2/coins, https://cors-anywhere.herokuapp.com/, https://dummyjson.com/products, https://dummyjson.com/users',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+  }),
+};
+
 export interface Products {
   id: number;
   title: string;
@@ -53,19 +61,19 @@ export class AppService {
   
 
   getDataProduct(): Observable<Products[]>{
-    return this.http.get<Products[]>(this.url);
+    return this.http.get<Products[]>(this.url, httpOptions2);
   }
 
   getDetailProduct(id: string): Observable<Products[]>{
-    return this.http.get<Products[]>(this.url + '/' + id);
+    return this.http.get<Products[]>(this.url + '/' + id, httpOptions2);
   }
 
   getDataUser(): Observable<Users[]>{
-    return this.http.get<Users[]>(this.url2);
+    return this.http.get<Users[]>(this.url2, httpOptions);
   }
 
   getDetaiUser(id: string): Observable<Users[]>{
-    return this.http.get<Users[]>(this.url2 + '/' + id);
+    return this.http.get<Users[]>(this.url2 + '/' + id, httpOptions2);
   }
   
   cryptoData() {

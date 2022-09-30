@@ -1,0 +1,92 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap :7rem;
+    padding: 0 2rem;
+}
+
+.img{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login-content{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.img img{
+  width: 500px;
+}
+
+form{
+  width: 360px;
+}
+  
+  .mat-form-field {
+    width: 100%;
+    min-width: 300px;
+  }
+
+  .card {
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+  }
+
+  mat-card {
+    justify-content: center;
+    margin: 180px 50px;
+    width: 300px;
+  }
+
+  mat-card-title,
+  mat-card-content, mat-card-header {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mat-display-1 {
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+
+  .error {
+    margin-top: 10px;
+    padding: 16px;
+    width: 100%;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+  }
+
+  .buttonlogin {
+    display: block;
+    color: white;
+    font-size: 18px;
+    width: 100% !important;
+    background-image: linear-gradient(to right, rgb(171,48,136), #d23976);
+  }
+  .wave{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+  }
+
