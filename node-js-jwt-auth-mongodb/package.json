@@ -14,7 +14,7 @@
     "authentication",
     "mongodb"
   ],
-  "author": "bezkoder",
+  "author": "ridho",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -24,13 +24,5 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.15"
   },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bezkoder/node-js-jwt-auth-mongodb.git"
-  },
-  "bugs": {
-    "url": "https://github.com/bezkoder/node-js-jwt-auth-mongodb/issues"
-  },
-  "homepage": "https://github.com/bezkoder/node-js-jwt-auth-mongodb#readme"
+  "devDependencies": {}
 }
